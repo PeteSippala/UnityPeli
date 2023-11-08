@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -9,7 +10,13 @@ public class movement : MonoBehaviour
 {
 
     Rigidbody2D rgbd2d;
-    Vector3 movementvector;
+    [HideInInspector]
+    public Vector3 movementvector;
+    [HideInInspector]
+    public float lastHorizontalVector;
+    [HideInInspector]
+    public float lastVerticalVector;
+
     [SerializeField] float speed = 3f;
 
     private void Awake()
@@ -23,6 +30,14 @@ public class movement : MonoBehaviour
     {
         movementvector.x = Input.GetAxisRaw("Horizontal");
         movementvector.y = Input.GetAxisRaw("Vertical");
+        if(movementvector.x != 0)
+        {
+            lastHorizontalVector= movementvector.x;
+        }
+        if(movementvector.y != 0)
+        {
+            lastVerticalVector = movementvector.y;
+        }
 
         movementvector *= speed;
 
