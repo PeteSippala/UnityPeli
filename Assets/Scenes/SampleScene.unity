@@ -434,6 +434,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37be74782f9608e418b6d717b7f3f3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementvector: {x: 0, y: 0, z: 0}
+  lastHorizontalVector: 0
+  lastVerticalVector: 0
   speed: 5
 --- !u!4 &714588588
 Transform:

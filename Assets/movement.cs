@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 [RequireComponent(typeof(Rigidbody2D))]
 
 
@@ -19,10 +20,13 @@ public class movement : MonoBehaviour
 
     [SerializeField] float speed = 3f;
 
+    animate animate;
+
     private void Awake()
     {
         rgbd2d = GetComponent<Rigidbody2D>();
         movementvector = new Vector3();
+        animate = GetComponent<animate>();
     }
 
     // Update is called once per frame
@@ -39,6 +43,8 @@ public class movement : MonoBehaviour
             lastVerticalVector = movementvector.y;
         }
 
+        animate.horizontal = movementvector.x;
+        animate.vertical = movementvector.y;
         movementvector *= speed;
 
         rgbd2d.velocity = movementvector;
