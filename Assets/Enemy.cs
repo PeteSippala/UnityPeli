@@ -6,15 +6,19 @@ using UnityEngine.TextCore.Text;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Transform targetDestination;
+    GameObject targetGameObject;
+    Character targetCharacter;
     [SerializeField] float speed;
 
     Rigidbody2D rgdbd2d;
 
-    [SerializeField] int hp = 4;
+    [SerializeField] int hp = 99;
+    [SerializeField] int damage = 1;
 
     private void Awake()
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
+        targetGameObject = targetDestination.gameObject;
     }
 
 
@@ -26,14 +30,19 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Character>())
+        if (collision.gameObject == targetGameObject)
         {
             Attack();
         }
     }
     private void Attack()
     {
-        Debug.Log("Attacking the character!");
+        if (targetCharacter == null)
+        {
+            targetCharacter = targetGameObject.GetComponent<Character>();
+        }
+
+        targetCharacter.TakeDamage(damage);
     }
 
     public void TakeDamage(int damage)
