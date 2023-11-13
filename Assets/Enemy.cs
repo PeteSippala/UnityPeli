@@ -5,7 +5,7 @@ using UnityEngine.TextCore.Text;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] Transform targetDestination;
+    public Transform targetDestination;
     GameObject targetGameObject;
     Character targetCharacter;
     [SerializeField] float speed;
@@ -19,7 +19,14 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
-        targetGameObject = targetDestination.gameObject;
+       
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        targetGameObject = target;
+        targetDestination = target.transform;
+
     }
 
 
