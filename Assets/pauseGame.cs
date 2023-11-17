@@ -8,11 +8,15 @@ public class pauseGame : MonoBehaviour
     public GameObject pauseMenuUI;
     private bool isPaused = false;
     public Button ContinueButton;
+    public Button Settings;
+    public Button QuitGame;
 
     void Start()
     {
         ContinueButton.onClick.AddListener(ContinueGame);
         ContinueButton.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(false);
+        QuitGame.gameObject.SetActive(false);
     }
 
     void Update()
@@ -65,10 +69,14 @@ public class pauseGame : MonoBehaviour
     void ShowButton()
     {
         ContinueButton.gameObject.SetActive(true);
+        Settings.gameObject.SetActive(true);
+        QuitGame.gameObject.SetActive(true);
     }
 
     void HideButton()
     {
         ContinueButton.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(false);
+        QuitGame.gameObject.SetActive(false);
     }
 }
