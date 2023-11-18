@@ -10,13 +10,16 @@ public class pauseGame : MonoBehaviour
     public Button ContinueButton;
     public Button Settings;
     public Button QuitGame;
+    public Image settingsFrame;
 
     void Start()
     {
         ContinueButton.onClick.AddListener(ContinueGame);
+        Settings.onClick.AddListener(ShowSettingsFrame);
         ContinueButton.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         QuitGame.gameObject.SetActive(false);
+        settingsFrame.gameObject.SetActive(false);
     }
 
     void Update()
@@ -78,5 +81,9 @@ public class pauseGame : MonoBehaviour
         ContinueButton.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         QuitGame.gameObject.SetActive(false);
+    }
+    void ShowSettingsFrame()
+    {
+        settingsFrame.gameObject.SetActive(true);
     }
 }
