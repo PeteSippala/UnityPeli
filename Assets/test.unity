@@ -3237,6 +3237,7 @@ GameObject:
   - component: {fileID: 989813784}
   - component: {fileID: 989813785}
   - component: {fileID: 989813786}
+  - component: {fileID: 989813787}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -3320,6 +3321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   currentHp: 100
+  armor: 0
   healAmount: 20
   healInterval: 3
   petPrefab: {fileID: 5395589553783436562, guid: 7e916110731b1d44db73b2121443837a, type: 3}
@@ -3397,6 +3399,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: 0
   vertical: 0
+--- !u!114 &989813787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989813779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb07ad7dee0c8c4893577ea22eb807a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  armorTest: {fileID: 11400000, guid: 9b45aaeea1ff03443bfa4632d6afbcf3, type: 2}
 --- !u!1001 &1062033637
 PrefabInstance:
   m_ObjectHideFlags: 0

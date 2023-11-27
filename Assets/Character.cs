@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -7,6 +8,7 @@ public class Character : MonoBehaviour
 {
     public int maxHp = 100;
     public int currentHp = 100;
+    public int armor = 0;
     public int healAmount = 20;
     public int healInterval = 3;
 
@@ -30,6 +32,7 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        ApplyArmor(ref damage); 
         currentHp -= damage;
 
         if (currentHp <= 0 )
@@ -37,6 +40,12 @@ public class Character : MonoBehaviour
             Debug.Log("Character is dead");
         }
         hpBar.SetState(currentHp, maxHp);
+    }
+
+    private void ApplyArmor(ref int damage)
+    {
+        damage -= armor;
+        if (damage < 0) { damage = 0; }
     }
 
     public void Heal(int amount)
