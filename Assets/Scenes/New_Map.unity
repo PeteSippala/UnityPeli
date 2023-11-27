@@ -179,6 +179,7 @@ MonoBehaviour:
   currentChunk: {fileID: 0}
   spawnedChunks: []
   maxOpDist: 50
+  optimizerCooldownDur: 0
 --- !u!1 &1151735852
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b97d8d556da93744a320ab985339645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 20
   moveDir: {x: 0, y: 0}
   lastHorizontalVector: 0
   lastVerticalVector: 0
