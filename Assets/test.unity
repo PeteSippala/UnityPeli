@@ -3320,6 +3320,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   currentHp: 100
+  healAmount: 20
+  healInterval: 3
+  petPrefab: {fileID: 5395589553783436562, guid: 7e916110731b1d44db73b2121443837a, type: 3}
   hpBar: {fileID: 676943648}
   level: {fileID: 0}
 --- !u!61 &989813784

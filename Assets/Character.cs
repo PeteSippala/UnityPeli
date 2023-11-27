@@ -7,6 +7,11 @@ public class Character : MonoBehaviour
 {
     public int maxHp = 100;
     public int currentHp = 100;
+    public int healAmount = 20;
+    public int healInterval = 3;
+
+    public GameObject petPrefab;
+    private GameObject petInstance;
     [SerializeField] StatusBar hpBar;
 
     [HideInInspector] public Level level;
@@ -19,6 +24,8 @@ public class Character : MonoBehaviour
     private void Start()
     {
         hpBar.SetState(currentHp, maxHp);
+        SpawnPet();
+        InvokeRepeating("HealPlayer", healInterval, healInterval);
     }
 
     public void TakeDamage(int damage)
@@ -44,5 +51,19 @@ public class Character : MonoBehaviour
 
         hpBar.SetState(currentHp, maxHp);
 
+    }
+    void HealPlayer()
+    {
+        if (currentHp < maxHp)
+        {
+            currentHp = Mathf.Min(maxHp, currentHp + healAmount);
+            hpBar.SetState(currentHp,maxHp);
+        }
+    }
+
+    void SpawnPet()
+    {
+        petInstance = Instantiate(petPrefab, transform.position - new Vector3(1f, 0f, 0f), Quaternion.identity);
+        petInstance.GetComponent<PetController>().SetPlayer(this);
     }
 }
