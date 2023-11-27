@@ -11,6 +11,7 @@ public class pauseGame : MonoBehaviour
     public Button Settings;
     public Button QuitGame;
     public Image settingsFrame;
+    public Text settingsText;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class pauseGame : MonoBehaviour
         Settings.gameObject.SetActive(false);
         QuitGame.gameObject.SetActive(false);
         settingsFrame.gameObject.SetActive(false);
+        settingsText.gameObject.SetActive(false);
     }
 
     void Update()
@@ -81,9 +83,16 @@ public class pauseGame : MonoBehaviour
         ContinueButton.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         QuitGame.gameObject.SetActive(false);
+        settingsFrame.gameObject.SetActive(false);
+        settingsText.gameObject.SetActive(false);
     }
     void ShowSettingsFrame()
     {
         settingsFrame.gameObject.SetActive(true);
+        settingsText.gameObject.SetActive(true);
+        ContinueButton.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(false);
+        QuitGame.gameObject.SetActive(false);
+
     }
 }
