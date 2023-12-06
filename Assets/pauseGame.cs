@@ -11,7 +11,10 @@ public class pauseGame : MonoBehaviour
     public Button Settings;
     public Button QuitGame;
     public Image settingsFrame;
-    public Text settingsText;
+    public Button settingsText;
+    public Slider volume1;
+    public Slider volume2;
+    public Slider volume3;
 
     void Start()
     {
@@ -22,6 +25,9 @@ public class pauseGame : MonoBehaviour
         QuitGame.gameObject.SetActive(false);
         settingsFrame.gameObject.SetActive(false);
         settingsText.gameObject.SetActive(false);
+        volume1.gameObject.SetActive(false);
+        volume2.gameObject.SetActive(false);
+        volume3.gameObject.SetActive(false);
     }
 
     void Update()
@@ -85,11 +91,17 @@ public class pauseGame : MonoBehaviour
         QuitGame.gameObject.SetActive(false);
         settingsFrame.gameObject.SetActive(false);
         settingsText.gameObject.SetActive(false);
+        volume1.gameObject.SetActive(false);
+        volume2.gameObject.SetActive(false);
+        volume3.gameObject.SetActive(false);
     }
     void ShowSettingsFrame()
     {
         settingsFrame.gameObject.SetActive(true);
         settingsText.gameObject.SetActive(true);
+        volume1.gameObject.SetActive(true);
+        volume2.gameObject.SetActive(true);
+        volume3.gameObject.SetActive(true);
         ContinueButton.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         QuitGame.gameObject.SetActive(false);
