@@ -8,28 +8,23 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
-    [SerializeField] GameObject player;
-    float timer;
+    GameObject player;
 
-    private void Update()
-    {
-        timer -= Time.deltaTime;
-        if (timer < 0f)
-        {
-            SpawnEnemy();
-            timer = spawnTimer;
-        }
-    }
-
-    private void SpawnEnemy()
+    public void SpawnEnemy(EnemyData enemyToSpawn)
     {
         Vector3 position = GenerateRandomPosition();
 
         position += player.transform.position;
 
+        //Object
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
+
+        // Sprite
+        GameObject spriteObject = Instantiate(enemyToSpawn.animatedPrefab);
+        spriteObject.transform.parent = newEnemy.transform;
+        spriteObject.transform.localPosition = Vector3.zero;
     }
 
     private Vector3 GenerateRandomPosition()
