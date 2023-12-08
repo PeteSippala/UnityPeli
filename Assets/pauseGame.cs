@@ -15,6 +15,10 @@ public class pauseGame : MonoBehaviour
     public Slider volume1;
     public Slider volume2;
     public Slider volume3;
+    public Button mainVolume;
+    public Button musicVolume;
+    public Button soundEffectVolume;
+    public Button getBack;
 
     void Start()
     {
@@ -28,6 +32,10 @@ public class pauseGame : MonoBehaviour
         volume1.gameObject.SetActive(false);
         volume2.gameObject.SetActive(false);
         volume3.gameObject.SetActive(false);
+        mainVolume.gameObject.SetActive(false);
+        musicVolume.gameObject.SetActive(false);
+        soundEffectVolume.gameObject.SetActive(false);
+        getBack.gameObject.SetActive(false);
     }
 
     void Update()
@@ -94,6 +102,10 @@ public class pauseGame : MonoBehaviour
         volume1.gameObject.SetActive(false);
         volume2.gameObject.SetActive(false);
         volume3.gameObject.SetActive(false);
+        mainVolume.gameObject.SetActive(false);
+        musicVolume.gameObject.SetActive(false);
+        soundEffectVolume.gameObject.SetActive(false);
+        getBack.gameObject.SetActive(false);
     }
     void ShowSettingsFrame()
     {
@@ -105,6 +117,26 @@ public class pauseGame : MonoBehaviour
         ContinueButton.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         QuitGame.gameObject.SetActive(false);
+        mainVolume.gameObject.SetActive(true);
+        musicVolume.gameObject.SetActive(true);
+        soundEffectVolume.gameObject.SetActive(true);
+        getBack.gameObject.SetActive(true);
+        getBack.onClick.AddListener(getBackFromSettings);
 
+    }
+    void getBackFromSettings()
+    {
+        settingsFrame.gameObject.SetActive(false);
+        settingsText.gameObject.SetActive(false);
+        volume1.gameObject.SetActive(false);
+        volume2.gameObject.SetActive(false);
+        volume3.gameObject.SetActive(false);
+        mainVolume.gameObject.SetActive(false);
+        musicVolume.gameObject.SetActive(false);
+        soundEffectVolume.gameObject.SetActive(false);
+        getBack.gameObject.SetActive(false);
+        ContinueButton.gameObject.SetActive(true);
+        Settings.gameObject.SetActive(true);
+        QuitGame.gameObject.SetActive(true);
     }
 }
