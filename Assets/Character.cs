@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public int maxHp = 100;
-    public int currentHp = 100;
-    public int armor = 0;
-    public int healAmount = 20;
-    public int healInterval = 3;
+    public float maxHp = 100;
+    public float currentHp = 100;
+    public float armor = 0;
+    public float healAmount = 20;
+    public float healInterval = 3;
 
     public GameObject petPrefab;
     private GameObject petInstance;
@@ -32,7 +32,7 @@ public class Character : MonoBehaviour
         InvokeRepeating("HealPlayer", healInterval, healInterval);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         ApplyArmor(ref damage); 
         currentHp -= damage;
@@ -44,13 +44,13 @@ public class Character : MonoBehaviour
         hpBar.SetState(currentHp, maxHp);
     }
 
-    private void ApplyArmor(ref int damage)
+    private void ApplyArmor(ref float damage)
     {
         damage -= armor;
         if (damage < 0) { damage = 0; }
     }
 
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         if(currentHp <= 0 ) { return; }
 

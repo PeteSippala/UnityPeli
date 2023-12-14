@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    int level = 1;
-    int experience = 0;
+    float level = 1.0f;
+    float experience = 0.0f;
     [SerializeField] ExperienceBar experienceBar;
 
-    int TO_LEVEL_UP
+    float TO_LEVEL_UP
     {
         get
         {
-            return level * 1000;
+            return level * 1000.0f;
         }
     }
 
@@ -22,7 +22,7 @@ public class Level : MonoBehaviour
         experienceBar.SetLevelText(level);
     }
 
-    public void AddExperience(int amount)
+    public void AddExperience(float amount)
     {
         experience += amount;
         CheckLevelUp();
@@ -34,7 +34,7 @@ public class Level : MonoBehaviour
         if(experience >= TO_LEVEL_UP)
         {
             experience -= TO_LEVEL_UP;
-            level += 1;
+            level += 1.0f;
             experienceBar.SetLevelText(level);
         }
     }

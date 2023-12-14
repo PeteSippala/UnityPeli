@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 
 public class WhipWeapon : MonoBehaviour
 {
+    protected PlayerStats player;
     [SerializeField] float timeToAttack = 4f;
     float timer;
 
@@ -13,10 +15,15 @@ public class WhipWeapon : MonoBehaviour
 
     movement playermove;
     [SerializeField] Vector2 whipAttackSize = new Vector2(4f, 2f);
-    [SerializeField] int whipDamage = 1;
+    [SerializeField] float whipDamage = 1;
 
+    public float GetCurrentDamage()
+    {
+        return whipDamage *= FindObjectOfType<PlayerStats>().currentPower;
+    }
     private void Awake()
     {
+        player = FindObjectOfType<PlayerStats>();
         playermove = GetComponentInParent<movement>();
     }
 
@@ -56,7 +63,7 @@ public class WhipWeapon : MonoBehaviour
             IDamageable e = colliders[i].GetComponent<IDamageable>();
             if (e != null)
             {
-                e.TakeDamage(whipDamage);
+                e.TakeDamage(GetCurrentDamage());
             }
             
         }

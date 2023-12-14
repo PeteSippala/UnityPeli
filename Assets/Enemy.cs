@@ -12,9 +12,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     Rigidbody2D rgdbd2d;
 
-    [SerializeField] int hp = 99;
-    [SerializeField] int damage = 1;
-    [SerializeField] int experience_reward = 100;
+    [SerializeField] float hp = 99;
+    [SerializeField] float damage = 1;
+    [SerializeField] float experience_reward = 100;
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour, IDamageable
         targetCharacter.TakeDamage(damage);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
 
