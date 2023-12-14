@@ -19,6 +19,7 @@ public class pauseGame : MonoBehaviour
     public Button musicVolume;
     public Button soundEffectVolume;
     public Button getBack;
+    
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class pauseGame : MonoBehaviour
         musicVolume.gameObject.SetActive(false);
         soundEffectVolume.gameObject.SetActive(false);
         getBack.gameObject.SetActive(false);
+        volume1.value = AudioListener.volume;
     }
 
     void Update()
@@ -138,5 +140,9 @@ public class pauseGame : MonoBehaviour
         ContinueButton.gameObject.SetActive(true);
         Settings.gameObject.SetActive(true);
         QuitGame.gameObject.SetActive(true);
+    }
+    public void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
     }
 }
