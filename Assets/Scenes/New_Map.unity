@@ -492,6 +492,16 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentPower: 0
   currentProjectileSpeed: 0
+  experience: 0
+  level: 1
+  experienceCap: 0
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experienceCapIncrease: 200
 --- !u!1 &1455355391
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +654,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1151735856}
   offset: {x: 0, y: 0, z: -10}
+--- !u!1001 &2085248323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 587970536103576465, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_Name
+      value: EnemyBat
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759735122844797633, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 587970536103576465, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2085248325}
+  m_SourcePrefab: {fileID: 100100000, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+--- !u!1 &2085248324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 587970536103576465, guid: 42eecf3883a2e4a46a87f6c1639d1d86, type: 3}
+  m_PrefabInstance: {fileID: 2085248323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2085248325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085248324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d757ce8b656c0184ea495ca49eda27ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: BlueGem
+    itemPrefab: {fileID: 491455434033627938, guid: a2c56c01a110d494c86bd6918fa8216a, type: 3}
+    dropRate: 100
 --- !u!1001 &5352389420752443743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -710,3 +801,4 @@ SceneRoots:
   - {fileID: 5352389420752443743}
   - {fileID: 1117647060}
   - {fileID: 1058775329}
+  - {fileID: 2085248323}
