@@ -61,5 +61,13 @@ public class EnemyStats : MonoBehaviour
         transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
 
     }
-    
+
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
+            player.TakeDamage(currentDamage);
+        }
+    }
 }

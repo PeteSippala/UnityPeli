@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public CharacterScriptableObject characterData;
-    [HideInInspector]
-    public float currrentHealth;
-    [HideInInspector]
+    //[HideInInspector]
+    public float currentHealth;
+    //[HideInInspector]
     public float currentRecovery;
-    [HideInInspector]
+    //[HideInInspector]
     public float currentMoveSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public float currentPower;
-    [HideInInspector]
+    //[HideInInspector]
     public float currentProjectileSpeed;
 
     [Header("Experience/level")]
@@ -36,7 +36,7 @@ public class PlayerStats : MonoBehaviour
     void Awake()
     {
         //Assigning process
-        currrentHealth = characterData.MaxHealth;
+        currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
         currentPower = characterData.Power;
@@ -73,8 +73,20 @@ public class PlayerStats : MonoBehaviour
             experienceCap += experienceCapIncrease;
         }
     }
+    public void TakeDamage(float dmg)
+    {
+        currentHealth -= dmg;
 
+        if (currentHealth <= 0)
+        {
+            Kill();
+        }
+    }
 
+    public void Kill()
+    {
+        Debug.Log("Player is Dead");
+    }
 }
 
 
