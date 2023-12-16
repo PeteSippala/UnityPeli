@@ -74,7 +74,20 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float dmg)
+    {
+        currentHealth -= dmg;
 
+        if(currentHealth <= 0)
+        {
+            Kill();
+        }
+    }
+
+    public void Kill()
+    {
+        Debug.Log("Player is dead");
+    }
 }
 
 
