@@ -56,15 +56,15 @@ public class PlayerStats : MonoBehaviour
 
     void LevelUpChecker()
     {
-        if(experience >= experienceCap)
+        if (experience >= experienceCap)
         {
             level++;
             experience -= experienceCap;
 
             int experienceCapIncrease = 0;
-            foreach(LevelRange range in levelRanges)
+            foreach (LevelRange range in levelRanges)
             {
-                if(level >= range.startLevel && level <=range.endLevel)
+                if (level >= range.startLevel && level <= range.endLevel)
                 {
                     experienceCapIncrease = range.experienceCapIncrease;
                     break;
@@ -74,20 +74,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float dmg)
-    {
-        currentHealth -= dmg;
 
-        if(currentHealth <= 0)
-        {
-            Kill();
-        }
-    }
-
-    public void Kill()
-    {
-        Debug.Log("Player is dead");
-    }
 }
 
 
