@@ -8,7 +8,7 @@ public class PlayPressed : MonoBehaviour
     
      public void OnButtonClicked()
     {
-        SceneManager.LoadScene("test");
+        SceneManager.LoadScene("Character");
     }
 
 }

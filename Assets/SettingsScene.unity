@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 1180299387}
   - component: {fileID: 1180299388}
   - component: {fileID: 1180299389}
+  - component: {fileID: 1180299390}
   m_Layer: 5
   m_Name: masterVolume
   m_TagString: Untagged
@@ -950,13 +951,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1180299389}
-        m_TargetAssemblyTypeName: OnVolumeChanged, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1180299390}
+        m_TargetAssemblyTypeName: prsStngs, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -972,6 +973,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4938e718b0a4824aa84a244b7462f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: {fileID: 0}
+--- !u!114 &1180299390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180299386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3484454ab7721bc41b917feb6010564d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolume: {fileID: 0}
