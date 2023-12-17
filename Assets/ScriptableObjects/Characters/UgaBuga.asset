@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fea71f029cd5445a26a44146685505, type: 3}
   m_Name: UgaBuga
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
   maxHealth: 10
-  recovery: 10
+  recovery: 1
   moveSpeed: 10
   power: 10
   projectileSpeed: 10
