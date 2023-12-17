@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [HideInInspector]
-    public CharacterScriptableObject characterData;
     
+    CharacterScriptableObject characterData;
+    [HideInInspector]
     public float currentHealth;
     [HideInInspector]
     public float currentRecovery;
@@ -19,8 +19,6 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public float currentProjectileSpeed;
 
-    //Spawned Weapons
-    public List<GameObject> spawnedWeapons;
 
 
 
@@ -49,12 +47,14 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
-    public GameObject secondWeaponTest;
     public GameObject firstPassiveItemTest;
     public GameObject SecondPassiveItemTest;
 
     void Awake()
     {
+        characterData = CharacterSelector.GetData();
+        CharacterSelector.instance.DestroySingleton();
+
         inventory = GetComponent<InventoryManager>();
         
         //Assigning process
@@ -65,7 +65,7 @@ public class PlayerStats : MonoBehaviour
         currentProjectileSpeed = characterData.ProjectileSpeed;
 
         //Spawning the starting weapon
-        //SpawnWeapon(characterData.StartingWeapon);
+        SpawnWeapon(characterData.StartingWeapon);
         SpawnPassiveItem(firstPassiveItemTest);
         SpawnPassiveItem(SecondPassiveItemTest);
     }
@@ -112,6 +112,8 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+       //GameManager.instance.StartLevelUp();
         }
     }
     public void TakeDamage(float dmg)
@@ -163,7 +165,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void SpawnWeapon(GameObject weapon)
     {
-        if(weaponIndex >= inventory.weaponSlots.Count -1)
+        if(weaponIndex >= inventory.weaponSlots.Count - 1)
         {
             Debug.LogError("Inventory slots are full");
             return;

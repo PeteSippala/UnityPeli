@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="CharacterScriptableObject", menuName ="ScriptableObjects/Character")]
 public class CharacterScriptableObject : ScriptableObject
 {
-    //[SerializeField]
-    //GameObject startingWeapon;
-    //public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
+    [SerializeField]
+    GameObject startingWeapon;
+    public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
 
     [SerializeField]
     float maxHealth;

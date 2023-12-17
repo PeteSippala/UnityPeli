@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5655451778504271295}
   - component: {fileID: 4186454238271654569}
-  - component: {fileID: 6404108623175465070}
   - component: {fileID: 770247771956874652}
+  - component: {fileID: 5593333394322946367}
   m_Layer: 0
   m_Name: Red Heart
   m_TagString: Untagged
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1132076047
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 15cc575b0d9a36846838578bfb080819, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,8 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6404108623175465070
-BoxCollider2D:
+--- !u!114 &770247771956874652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8961912009797485379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfaa1ca8c7d1a84eb79e37aa2b0a724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthToRestore: 100
+--- !u!58 &5593333394322946367
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,29 +131,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.045}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.11, y: 0.09}
-    newSize: {x: 0.11, y: 0.09}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.140625}
   serializedVersion: 2
-  m_Size: {x: 0.11, y: 0.09}
-  m_EdgeRadius: 0
---- !u!114 &770247771956874652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8961912009797485379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebfaa1ca8c7d1a84eb79e37aa2b0a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthToRestore: 100
+  m_Radius: 0.171875

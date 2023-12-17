@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3593446128004889505}
   - component: {fileID: -1746065194152071536}
   - component: {fileID: 553888348409112587}
+  - component: {fileID: -1880490562355432951}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1159283100857050174}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.66917783, y: -2.41784, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,3 +184,22 @@ MonoBehaviour:
   currentHealth: 0
   currentDamage: 0
   despawningDistance: 20
+--- !u!114 &-1880490562355432951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159283100857050174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d757ce8b656c0184ea495ca49eda27ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Blue Gem
+    itemPrefab: {fileID: 491455434033627938, guid: a2c56c01a110d494c86bd6918fa8216a, type: 3}
+    dropRate: 99
+  - name: Red Heart
+    itemPrefab: {fileID: 8961912009797485379, guid: ec7f934beeca1684491c58f92acc7099, type: 3}
+    dropRate: 40
