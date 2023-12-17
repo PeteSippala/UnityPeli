@@ -763,13 +763,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3775ef76f94164eb3b3f1e56a350f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 0a6e10ef6d0775a4590277af0db46113, type: 2}
   currentHealth: 0
   currentRecovery: 0
   currentMoveSpeed: 0
   currentPower: 0
   currentProjectileSpeed: 0
-  spawnedWeapons: []
   experience: 0
   level: 1
   experienceCap: 0
@@ -783,9 +781,8 @@ MonoBehaviour:
     experienceCapIncrease: 200
   weaponIndex: 0
   passiveItemIndex: 0
-  secondWeaponTest: {fileID: 0}
-  firstPassiveItemTest: {fileID: 4150092960784224522, guid: 5d345ec98a79ca44993fc5e2ef40359a, type: 3}
-  SecondPassiveItemTest: {fileID: 480238975815278125, guid: 21b79abedffa0224e9c93a7cf0bd249e, type: 3}
+  firstPassiveItemTest: {fileID: 4085993807837343555, guid: 5d345ec98a79ca44993fc5e2ef40359a, type: 3}
+  SecondPassiveItemTest: {fileID: 0}
 --- !u!114 &1151735861
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterSelection : MonoBehaviour
+public class CharacterSelector : MonoBehaviour
 {
-    public static CharacterSelection instance;
+    public static CharacterSelector instance;
     public CharacterScriptableObject characterData;
 
     void Awake()
@@ -30,6 +30,12 @@ public class CharacterSelection : MonoBehaviour
     public void SelectCharacter(CharacterScriptableObject character)
     {
         characterData = character;
-        SceneManager.LoadScene("New_Map");
+        //SceneManager.LoadScene("New_Map");
+    }
+
+    public void DestroySingleton()
+    {
+        instance = null;
+        Destroy(gameObject);
     }
 }
