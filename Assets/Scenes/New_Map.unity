@@ -1172,6 +1172,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1928097749367733890, guid: e47561d60631e724eb2ea1409d251133, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928097749367733890, guid: e47561d60631e724eb2ea1409d251133, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1132076047
+      objectReference: {fileID: 0}
     - target: {fileID: 8205577606808804504, guid: e47561d60631e724eb2ea1409d251133, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.66917783
