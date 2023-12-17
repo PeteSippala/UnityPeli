@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using Unity.Mathematics;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -34,7 +32,7 @@ public class MapController : MonoBehaviour
     void Update()
     {
         ChunkChecker();
-        ChunkOptimzer();
+        ChunkOptimizer();
     }
 
     void ChunkChecker()
@@ -125,11 +123,11 @@ public class MapController : MonoBehaviour
     void SpawnChunk(Vector3 spawnPosition)
     {
         int rand = UnityEngine.Random.Range(0, terrainChunks.Count);
-        latestChunk = Instantiate(terrainChunks[rand], spawnPosition, UnityEngine.Quaternion.identity);
+        latestChunk = Instantiate(terrainChunks[rand], spawnPosition, Quaternion.identity);
         spawnedChunks.Add(latestChunk);
     }
 
-    void ChunkOptimzer()
+    void ChunkOptimizer()
     {
         optimizerCooldown -= Time.deltaTime;
 

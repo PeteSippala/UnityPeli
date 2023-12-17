@@ -782,7 +782,7 @@ MonoBehaviour:
   weaponIndex: 0
   passiveItemIndex: 0
   firstPassiveItemTest: {fileID: 4085993807837343555, guid: 5d345ec98a79ca44993fc5e2ef40359a, type: 3}
-  SecondPassiveItemTest: {fileID: 0}
+  SecondPassiveItemTest: {fileID: 2415619093432722348, guid: 21b79abedffa0224e9c93a7cf0bd249e, type: 3}
 --- !u!114 &1151735861
 MonoBehaviour:
   m_ObjectHideFlags: 0
