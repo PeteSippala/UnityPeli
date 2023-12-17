@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    //[HideInInspector]
+    [HideInInspector]
     public CharacterScriptableObject characterData;
-    //[HideInInspector]
+    
     public float currentHealth;
-    //[HideInInspector]
+    [HideInInspector]
     public float currentRecovery;
-    //[HideInInspector]
+    [HideInInspector]
     public float currentMoveSpeed;
-    //[HideInInspector]
+    [HideInInspector]
     public float currentPower;
-    //[HideInInspector]
+    [HideInInspector]
     public float currentProjectileSpeed;
 
     [Header("Experience/level")]
@@ -30,6 +30,12 @@ public class PlayerStats : MonoBehaviour
         public int endLevel;
         public int experienceCapIncrease;
     }
+
+    [Header("I-Frames")]
+    public float invincibilityDuration;
+    float invincibilityTimer;
+    bool isInvincible;
+
 
     public List<LevelRange> levelRanges;
 
@@ -46,6 +52,20 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease;
+    }
+
+    private void Update()
+    {
+        if(invincibilityTimer > 0)
+        {
+            invincibilityTimer -= Time.deltaTime;
+        }
+        else if (isInvincible)
+        {
+            isInvincible = false;
+        }
+
+        Recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -75,11 +95,17 @@ public class PlayerStats : MonoBehaviour
     }
     public void TakeDamage(float dmg)
     {
-        currentHealth -= dmg;
-
-        if (currentHealth <= 0)
+        if (!isInvincible)
         {
-            Kill();
+            currentHealth -= dmg;
+
+            invincibilityTimer = invincibilityDuration;
+            isInvincible = true;
+
+            if (currentHealth <= 0)
+            {
+                Kill();
+            }
         }
     }
 
@@ -87,6 +113,34 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("Player is Dead");
     }
+
+    public void RestoreHealth(float amount)
+    {
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += amount;
+            if (currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+        
+    }
+
+    void Recover()
+    {
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
+
+            if(currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+                
+        }
+    }
+
 }
 
 
