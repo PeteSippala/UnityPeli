@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7009065245578286831}
   - component: {fileID: 1136445083785594112}
   - component: {fileID: 2114374738351940724}
+  - component: {fileID: -7318431683125968425}
   m_Layer: 0
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8914987190656512107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8838174, y: -2.610184, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,14 +146,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.35, y: 0.36}
+    oldSize: {x: 1.09375, y: 1.125}
     newSize: {x: 0.35, y: 0.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35, y: 0.36}
+  m_Size: {x: 0.75, y: 0.36}
   m_EdgeRadius: 0
 --- !u!114 &1136445083785594112
 MonoBehaviour:
@@ -183,3 +184,22 @@ MonoBehaviour:
   currentHealth: 0
   currentDamage: 0
   despawningDistance: 20
+--- !u!114 &-7318431683125968425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8914987190656512107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d757ce8b656c0184ea495ca49eda27ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Blue Gem
+    itemPrefab: {fileID: 491455434033627938, guid: a2c56c01a110d494c86bd6918fa8216a, type: 3}
+    dropRate: 99
+  - name: Red Heart
+    itemPrefab: {fileID: 8961912009797485379, guid: ec7f934beeca1684491c58f92acc7099, type: 3}
+    dropRate: 40
