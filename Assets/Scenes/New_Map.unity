@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 0a6e10ef6d0775a4590277af0db46113, type: 2}
-  currrentHealth: 0
+  currentHealth: 0
   currentRecovery: 0
   currentMoveSpeed: 0
   currentPower: 0
@@ -825,6 +825,7 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 0
+  invincibilityDuration: 0.5
   levelRanges:
   - startLevel: 1
     endLevel: 3
