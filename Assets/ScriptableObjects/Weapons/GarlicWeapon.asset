@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c7537863381d884e8e21bee2377b0e7, type: 3}
-  m_Name: Skeleton
+  m_Script: {fileID: 11500000, guid: ce031d1aab464434c96e33efba1e3761, type: 3}
+  m_Name: GarlicWeapon
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  maxHealth: 10
+  prefab: {fileID: 6292352368720956841, guid: 1e32ac1c676a14543850ca8ad90a9166, type: 3}
   damage: 10
+  speed: 0
+  cooldownDuration: 3
+  pierce: 0

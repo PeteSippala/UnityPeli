@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c7537863381d884e8e21bee2377b0e7, type: 3}
-  m_Name: Skeleton
+  m_Name: Shroom
   m_EditorClassIdentifier: 
   moveSpeed: 2
   maxHealth: 10

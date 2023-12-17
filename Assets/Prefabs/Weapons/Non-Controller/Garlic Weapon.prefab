@@ -11,6 +11,15 @@ GameObject:
   - component: {fileID: 6944288361365687815}
   - component: {fileID: 2697414611269872461}
   - component: {fileID: 4394504378558181148}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Prefabs/Weapons/Garlic Weapon.prefab
+  - component: {fileID: 222959958653590267}
+=======
+  - component: {fileID: 7940975117588461890}
+>>>>>>> 4ebed8641bfbe71f747f0f96b3b50ced202ad6c6:Assets/Prefabs/Weapons/Non-Controller/Garlic Weapon.prefab
+=======
+  - component: {fileID: 7940975117588461890}
+>>>>>>> 4ebed8641bfbe71f747f0f96b3b50ced202ad6c6
   m_Layer: 0
   m_Name: Garlic Weapon
   m_TagString: Untagged
@@ -97,4 +106,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a5915bd3603bb4cb18ec1013864aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 346de42f882c7344ea4afa6b75f3690f, type: 2}
   destroyAfterSeconds: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Prefabs/Weapons/Garlic Weapon.prefab
+--- !u!58 &222959958653590267
+=======
+--- !u!58 &7940975117588461890
+>>>>>>> 4ebed8641bfbe71f747f0f96b3b50ced202ad6c6:Assets/Prefabs/Weapons/Non-Controller/Garlic Weapon.prefab
+=======
+--- !u!58 &7940975117588461890
+>>>>>>> 4ebed8641bfbe71f747f0f96b3b50ced202ad6c6
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292352368720956841}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.375

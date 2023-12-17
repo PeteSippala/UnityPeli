@@ -193,6 +193,35 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
+  - waveName: Wave 1
+    enemyGroups:
+    - enemyName: Goblin
+      enemyCount: 5
+      spawnCount: 3
+      enemyPrefab: {fileID: 8914987190656512107, guid: 89c7a3da37b931e429a12b894ed24b39, type: 3}
+    - enemyName: FlyingEye
+      enemyCount: 5
+      spawnCount: 3
+      enemyPrefab: {fileID: 5066309988913777977, guid: 6c211860bb7d42c40ab59a55dd0657f8, type: 3}
+    - enemyName: Goblin
+      enemyCount: 5
+      spawnCount: 3
+      enemyPrefab: {fileID: 8914987190656512107, guid: 89c7a3da37b931e429a12b894ed24b39, type: 3}
+    - enemyName: Red Bat
+      enemyCount: 5
+      spawnCount: 3
+      enemyPrefab: {fileID: 1159283100857050174, guid: e136cfd0b4cc792409eac1201543a1c9, type: 3}
+    - enemyName: Shroom
+      enemyCount: 5
+      spawnCount: 3
+      enemyPrefab: {fileID: 3424848621019100524, guid: 8dd2ee9e947b230479fde5de6986da63, type: 3}
+    - enemyName: Skeleton
+      enemyCount: 5
+      spawnCount: 3
+      enemyPrefab: {fileID: 5614271505572826902, guid: c970a740e89daf64592b8e1fa6e30a2f, type: 3}
+    waveQuota: 0
+    spawnInterval: 1
+    spawnCount: 0
   currentWaveCount: 0
   enemiesAlive: 0
   maxEnemiesAllowed: 4
@@ -526,6 +555,7 @@ GameObject:
   - component: {fileID: 1151735859}
   - component: {fileID: 1151735858}
   - component: {fileID: 1151735860}
+  - component: {fileID: 1151735861}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -669,9 +699,7 @@ Transform:
   m_LocalPosition: {x: -0.13, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1681064715}
-  - {fileID: 1333843194}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1151735857
@@ -741,6 +769,7 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentPower: 0
   currentProjectileSpeed: 0
+  spawnedWeapons: []
   experience: 0
   level: 1
   experienceCap: 0
@@ -752,6 +781,39 @@ MonoBehaviour:
   - startLevel: 4
     endLevel: 5
     experienceCapIncrease: 200
+  weaponIndex: 0
+  passiveItemIndex: 0
+  secondWeaponTest: {fileID: 0}
+  firstPassiveItemTest: {fileID: 4150092960784224522, guid: 5d345ec98a79ca44993fc5e2ef40359a, type: 3}
+  SecondPassiveItemTest: {fileID: 480238975815278125, guid: 21b79abedffa0224e9c93a7cf0bd249e, type: 3}
+--- !u!114 &1151735861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151735852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ce26c0eb6a48149b09548e44aeb355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  weaponLevels: 000000000000000000000000000000000000000000000000
+  passiveItemSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  passiveItemLevels: 000000000000000000000000000000000000000000000000
 --- !u!1 &1267301815
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,55 +845,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 232534813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1333843193
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1333843194}
-  - component: {fileID: 1333843195}
-  m_Layer: 0
-  m_Name: Garlic Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1333843194
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333843193}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1151735856}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1333843195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333843193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3781f3d0659753342b7fe7a934ef1503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6292352368720956841, guid: 1e32ac1c676a14543850ca8ad90a9166, type: 3}
-  damage: 0
-  speed: 0
-  cooldownDuration: 3
-  pierce: 0
 --- !u!1 &1455355391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,55 +1028,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 232534813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1681064714
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1681064715}
-  - component: {fileID: 1681064716}
-  m_Layer: 0
-  m_Name: Knife Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1681064715
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681064714}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1151735856}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1681064716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681064714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e772ffe82b1e72d49933adf8ace3efd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6626855265993287341, guid: d85779b8138d8bc4abba6e91b93a6f9e, type: 3}
-  damage: 0
-  speed: 10
-  cooldownDuration: 2
-  pierce: 0
 --- !u!1 &2010732260
 GameObject:
   m_ObjectHideFlags: 0

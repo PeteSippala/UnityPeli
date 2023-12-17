@@ -21,9 +21,9 @@ public class EnemyStats : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        currentMoveSpeed = enemyData.moveSpeed;
-        currentHealth = enemyData.maxHealth;
-        currentDamage = enemyData.damage;
+        currentMoveSpeed = enemyData.MoveSpeed;
+        currentHealth = enemyData.MaxHealth;
+        currentDamage = enemyData.Damage;
     }
 
     private void Start()
